@@ -21,9 +21,7 @@
         <div class="row">
 
         </div>
-        <div class="comment-grid">
-            @Html.Partial("~/Views/CharacterCommentForm.cshtml")
-        </div>
+
         <div class="comment-grid">
             @{
             var CurrentPage = Model;
@@ -32,13 +30,20 @@
                 @foreach (var item in CurrentPage.Children.Where(x => x.IsVisible()))
                 {
                 <li>
+                    @item.Name
+                </li>
+                <li>
                     @item.Value("commenter")
                 </li>
                 <li>
                     @item.Value("CommentContent")
                 </li>
+                <br />
                 }
             </ul>
+        </div>
+        <div class="comment-grid">
+            @Html.Partial("~/Views/CharacterCommentForm.cshtml")
         </div>
     </div>
 </section>

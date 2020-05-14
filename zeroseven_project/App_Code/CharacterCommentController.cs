@@ -40,7 +40,7 @@ namespace zeroseven_project
         private void CreateComment(string commenter, string comment, Umbraco.Core.Udi parentId)
         {
             IContentService contentService = Services.ContentService;
-            var content = contentService.CreateContent(DateTime.Today.ToString("yy/MM/dd h:mm tt"), parentId, "characterComment");
+            var content = contentService.CreateContent(DateTime.Now.ToString("yy/MM/dd h:mm tt"), parentId, "characterComment");
             int id = CurrentPage.Id;
             content.SetValue("commenter", commenter);
             content.SetValue("commentContent", comment);

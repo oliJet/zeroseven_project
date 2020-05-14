@@ -339,3 +339,4 @@ ASALocalRun/
 # BeatPulse healthcheck temp database
 healthchecksdb
 /zeroseven_project/App_Data/Logs
+/zeroseven_project/App_Data/TEMP/ExamineIndexes
