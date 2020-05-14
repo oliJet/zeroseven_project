@@ -26,12 +26,10 @@
         </div>
         <div class="comment-grid">
             @{
-            var selection = Umbraco.Content(Guid.Parse("6ec39f8c-74ab-4408-9029-bcb052ea4555"))
-            .ChildrenOfType("characterComment")
-            .Where(x => x.IsVisible());
+            var CurrentPage = Model;
             }
             <ul>
-                @foreach (var item in selection)
+                @foreach (var item in CurrentPage.Children.Where(x => x.IsVisible()))
                 {
                 <li>
                     @item.Value("commenter")
