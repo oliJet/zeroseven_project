@@ -1,0 +1,21 @@
+﻿
+
+@using (Html.BeginUmbracoForm<zeroseven_project.CharacterCommentSurfaceController>("PostCharacterComment"))
+{
+    var model = new zeroseven_project.App_Code.Models.UserCommentModel();
+    <div class="editor-label">
+        @Html.LabelFor(x => model.Commenter)
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(x => model.Commenter)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(x => model.CommentContent)
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(x => model.CommentContent)
+    </div>
+    <input type="submit" />
+}
+

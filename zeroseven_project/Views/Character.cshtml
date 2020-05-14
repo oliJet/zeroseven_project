@@ -1,0 +1,46 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Character>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    Layout = "master.cshtml";
+}
+@Html.Partial("~/Views/Partials/SectionHeader.cshtml", Model.Parent)
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="product-image-container">
+                    <img class="product-image" src="@Model.CharacterImage.Url" alt="@Model.CharacterName image" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h1>@Model.CharacterName</h1>
+                <div class="product-price"> @Model.CharacterAge.ToString()</div>
+                <div class="product-teaser">@Model.CharacterBio</div>
+            </div>
+        </div>
+        <div class="row">
+
+        </div>
+        <div class="comment-grid">
+            @Html.Partial("~/Views/CharacterCommentForm.cshtml")
+        </div>
+        <div class="comment-grid">
+            @{
+            var selection = Umbraco.Content(Guid.Parse("6ec39f8c-74ab-4408-9029-bcb052ea4555"))
+            .ChildrenOfType("characterComment")
+            .Where(x => x.IsVisible());
+            }
+            <ul>
+                @foreach (var item in selection)
+                {
+                <li>
+                    @item.Value("commenter")
+                </li>
+                <li>
+                    @item.Value("CommentContent")
+                </li>
+                }
+            </ul>
+        </div>
+    </div>
+</section>

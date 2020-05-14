@@ -1,0 +1,89 @@
+.character-grid__item:hover body.theme-color-earth .product-grid__item__name, .product-grid__item:hover body.theme-color-earth .product-grid__item__price, body.theme-color-earth .bg-main-color, body.theme-color-earth .button--border--solid, body.theme-color-earth .mobile-nav, body.theme-color-earth .product-grid__item:hover .product-grid__item__name, body.theme-color-earth .product-grid__item:hover .product-grid__item__price, body.theme-color-earth .section--themed {
+    background-color: #e7afa3;
+    color: #000
+}
+
+.character-image-container {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: start;
+    align-items: flex-start
+}
+
+.character-image {
+    max-width: 100%;
+    max-height: 600px
+}
+
+.character-age {
+    font-size: 30px;
+    margin-bottom: 20px
+}
+
+.character-teaser {
+    font-size: 18px;
+    line-height: 1.6em;
+    margin-bottom: 20px
+}
+
+.character-button {
+    margin-bottom: 40px
+}
+
+
+.character-grid {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    overflow: hidden
+}
+
+.character-grid__item {
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    -ms-flex: 1 1 100%;
+    flex: 1 1 100%;
+    max-width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%
+}
+
+    .character-grid__item:hover {
+        cursor: pointer
+    }
+
+.character-grid__item__overlay {
+    position: absolute;
+    bottom: 0;
+    padding: 20px;
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-align: start;
+    align-items: flex-start
+}
+
+.character-grid__item-image {
+    max-width: 100%
+}
+
+.character-grid__item__name, .character-grid__item__price {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-bottom: 5px;
+    letter-spacing: 5px;
+    background-color: rgba(0,0,0,.35);
+    padding: 2px 5px;
+    display: inline-block
+}
+        

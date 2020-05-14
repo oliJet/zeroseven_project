@@ -1,0 +1,20 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Character>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@using Umbraco.Core.Services;
+
+@{
+    var selection = Umbraco.Content(Guid.Parse("6ec39f8c-74ab-4408-9029-bcb052ea4555"))
+    .ChildrenOfType("characterComment")
+    .Where(x => x.IsVisible());
+}
+<ul>
+    @foreach (var item in selection)
+    {
+        <li>
+            @item.Value("commenter")
+        </li>
+        <li>
+            @item.Value("CommentContent")
+        </li>
+    }
+</ul>

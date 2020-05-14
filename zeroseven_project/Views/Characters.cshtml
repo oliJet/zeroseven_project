@@ -1,0 +1,27 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Characters>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+	Layout = "master.cshtml";
+}
+@Html.Partial("~/Views/Partials/SectionHeader.cshtml")
+<section class="section">
+
+    <div class="container">
+
+        <div class="character-grid">
+            @if (Model.FeaturedCharacters != null)
+            {
+                foreach (Character charicter in Model.FeaturedCharacters)
+                {
+                    <a href="@charicter.Url" class="product-grid__item" style="background-image: url('@charicter.CharacterImage.Url')">
+                        <div class="character-grid__item__overlay">
+                            <div class="character-grid__item__name">@charicter.CharacterName</div>
+                            <div class="character-grid__item__price">@charicter.CharacterAge.ToString()</div>
+                        </div>
+                    </a>
+                }
+            }
+        </div>
+    </div>
+
+</section>
